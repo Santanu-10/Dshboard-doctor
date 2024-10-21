@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Sidebar from '../src/Components/Sidebar';
+import TopBar from '../src/Components/TopBar';
+import PatientTable from '../src/Components/PatientTable';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container fluid>
+        <Row>
+          <Col md={2}>
+            <Sidebar />
+          </Col>
+          <Col md={10}>
+            <TopBar />
+            <PatientTable />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
